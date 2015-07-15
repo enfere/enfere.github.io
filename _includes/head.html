@@ -1,0 +1,20 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}Enfere / {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="stylesheet" href="/assets/main.css" type="text/css">
+    <script src="/assets/jquery.js"></script>
+    <script src="/assets/main.js"></script>
+    
+    <script src="/assets/responsive-carousel.js"></script>
+    <script src="/assets/responsive-carousel.touch.js"></script>
+    <script src="/assets/responsive-carousel.drag.js"></script>
+    <link href="/assets/responsive-carousel.css" rel="stylesheet">
+    <link href="/assets/responsive-carousel.slide.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/animsition.css">
+<script src="/assets/jquery.animsition.min.js"></script>
+</head>

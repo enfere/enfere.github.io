@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <link rel="icon" type="image/png" href="icon.png" />
+    <style>
+        body {
+            background-color: {{ page.background }};
+            color: {{ page.color }};
+        }
+        nav.carousel-nav a {
+            background-color: {{ page.color }};
+            color: {{ page.background }};
+        }
+    </style>
+    <body class="animsition">
+        <div class="header">
+            <a href="/" class="animsition-link">&larr; Back</a>
+        </div>
+        <div id="wrap">
+            <div class="section index">
+                <div class="app_title">
+                    <h1>{{ page.title }}</h1>
+                    {% if page.selling == true %}
+                        <a target="_blank" class="app_link" href="{{ page.link }}">Download</a>
+                    {% else %}
+                        <a class="app_link not_yet" href="#">Pending</a>
+                    {% endif %}
+                </div>
+                <p>{{ page.html_description }}</p>
+            </div>
+            <div class="section showcase mt"> 
+                <h2 class="showcase_name">Images</h2>
+                    <div id="app_images" class="carousel" data-transition="slide" style="max-width: {{ page.width }}">
+                        {% for item in page.images %}
+                            <img data-slidr="{{ item }}" src="{{ item }}.png">
+                        {% endfor %}
+</div>
+                </div>
+            </div>
+            {% include footer.html %}
+        </div>
+        <script src="/assets/slidr.js"></script>
+    </body>
+</html>
